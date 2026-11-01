@@ -1,0 +1,42 @@
+{
+	"name": "nws-forecast-widget",
+	"version": "0.1.0",
+	"description": "A dependency-free web component that shows the National Weather Service forecast for any US latitude and longitude. No API key required.",
+	"type": "module",
+	"main": "./src/index.js",
+	"types": "./types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./types/index.d.ts",
+			"default": "./src/index.js"
+		},
+		"./client": {
+			"types": "./types/client.d.ts",
+			"default": "./src/client.js"
+		}
+	},
+	"files": [
+		"src",
+		"types"
+	],
+	"sideEffects": [
+		"./src/index.js"
+	],
+	"scripts": {
+		"test": "node --test",
+		"demo": "npx --yes http-server@14.1.1 -c-1 -p 8411 ."
+	},
+	"keywords": [
+		"weather",
+		"forecast",
+		"nws",
+		"noaa",
+		"national-weather-service",
+		"weather-widget",
+		"web-component",
+		"custom-element",
+		"vanilla-js"
+	],
+	"author": "Rob Bolton (https://beexploring.com/)",
+	"license": "MIT"
+}
