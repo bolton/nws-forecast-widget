@@ -38,5 +38,13 @@
 		"vanilla-js"
 	],
 	"author": "Rob Bolton (https://beexploring.com/)",
+	"homepage": "https://github.com/bolton/nws-forecast-widget#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bolton/nws-forecast-widget.git"
+	},
+	"bugs": {
+		"url": "https://github.com/bolton/nws-forecast-widget/issues"
+	},
 	"license": "MIT"
 }
