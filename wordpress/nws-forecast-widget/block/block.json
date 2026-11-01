@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "nws-forecast-widget/forecast",
+	"version": "1.0.0",
+	"title": "NWS Forecast",
+	"category": "widgets",
+	"icon": "cloud",
+	"description": "The National Weather Service forecast for a US latitude and longitude.",
+	"keywords": ["weather", "forecast", "nws", "noaa"],
+	"textdomain": "nws-forecast-widget",
+	"attributes": {
+		"lat": { "type": "string", "default": "" },
+		"lng": { "type": "string", "default": "" },
+		"days": { "type": "number", "default": 5 },
+		"units": { "type": "string", "enum": ["", "us", "si"], "default": "" },
+		"heading": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"spacing": { "margin": true }
+	},
+	"example": {
+		"attributes": { "lat": "47.6062", "lng": "-122.3321", "days": 4 }
+	},
+	"editorScript": "file:./editor.js",
+	"render": "file:./render.php"
+}

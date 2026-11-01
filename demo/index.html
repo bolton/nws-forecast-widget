@@ -106,6 +106,20 @@
 		<h2>Live</h2>
 		<nws-forecast id="live" lat="47.6062" lng="-122.3321" days="5"></nws-forecast>
 		<pre id="snippet"></pre>
+		<p>
+			Site builder that strips script tags (Wix, Google Sites, Notion)? Use the iframe instead.
+			<a href="https://github.com/bolton/nws-forecast-widget/blob/main/docs/platforms.md"
+				>Install guides for each platform</a
+			>.
+		</p>
+		<pre id="iframe-snippet"></pre>
+
+		<h2>Iframe embed</h2>
+		<iframe
+			src="../embed/?lat=44.0582&lng=-121.3153&days=4&heading=Bend%2C%20OR&theme=light"
+			title="Weather forecast"
+			style="width: 100%; height: 280px; border: 0"
+		></iframe>
 
 		<h2>Themed with CSS custom properties</h2>
 		<nws-forecast
@@ -125,6 +139,7 @@
 			const live = document.getElementById('live');
 			const form = document.getElementById('controls');
 			const snippet = document.getElementById('snippet');
+			const iframeSnippet = document.getElementById('iframe-snippet');
 
 			function apply() {
 				const data = new FormData(form);
@@ -133,6 +148,15 @@
 				snippet.textContent =
 					`<script type="module" src="https://cdn.jsdelivr.net/npm/nws-forecast-widget@0.1.1/src/index.js"><\/script>\n` +
 					`<nws-forecast lat="${data.get('lat')}" lng="${data.get('lng')}" days="${data.get('days')}"${units}></nws-forecast>`;
+				const query = new URLSearchParams({
+					lat: data.get('lat'),
+					lng: data.get('lng'),
+					days: data.get('days')
+				});
+				if (data.get('units') === 'si') query.set('units', 'si');
+				iframeSnippet.textContent =
+					`<iframe src="https://bolton.github.io/nws-forecast-widget/embed/?${query}"\n` +
+					`  title="Weather forecast" loading="lazy" style="width:100%;height:280px;border:0"></iframe>`;
 			}
 
 			form.addEventListener('submit', (event) => {

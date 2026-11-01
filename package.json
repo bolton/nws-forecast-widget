@@ -24,7 +24,8 @@
 	],
 	"scripts": {
 		"test": "node --test",
-		"demo": "npx --yes http-server@14.1.1 -c-1 -p 8411 ."
+		"demo": "npx --yes http-server@14.1.1 -c-1 -p 8411 .",
+		"build:wp": "node scripts/build-wp.js"
 	},
 	"keywords": [
 		"weather",
@@ -46,5 +47,8 @@
 	"bugs": {
 		"url": "https://github.com/bolton/nws-forecast-widget/issues"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"esbuild": "0.28.2"
+	}
 }

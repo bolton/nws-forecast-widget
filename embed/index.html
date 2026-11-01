@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<title>NWS forecast</title>
+		<!--
+			Embeddable forecast for site builders that strip <script> tags
+			(Wix, Google Sites, Notion and similar). Everything is set in the
+			query string:
+
+			  lat, lng   required, decimal degrees
+			  days       1-7, default 5
+			  units      us | si
+			  heading    replaces "Forecast near ..."
+			  theme      light (default) | dark | auto
+			  bg, fg, accent   hex colours without the #, e.g. accent=38bdf8
+			  credit=0   hides the "Widget by beexploring.com" link
+
+			The page posts its height to the parent as
+			{ type: 'nws-forecast-height', height } so hosts can size the iframe.
+		-->
+		<style>
+			:root {
+				color-scheme: light;
+			}
+			:root[data-theme='dark'] {
+				color-scheme: dark;
+			}
+			:root[data-theme='auto'] {
+				color-scheme: light dark;
+			}
+			html,
+			body {
+				margin: 0;
+				background: transparent;
+			}
+			body {
+				padding: 1px;
+			}
+		</style>
+		<script type="module" src="../src/index.js"></script>
+	</head>
+	<body>
+		<nws-forecast id="forecast"></nws-forecast>
+		<script>
+			(function () {
+				var params = new URLSearchParams(location.search);
+				var el = document.getElementById('forecast');
+				var theme = params.get('theme');
+				if (theme === 'dark' || theme === 'auto') document.documentElement.dataset.theme = theme;
+
+				['lat', 'lng', 'days', 'units', 'heading'].forEach(function (name) {
+					var value = params.get(name);
+					if (value) el.setAttribute(name, value.slice(0, 100));
+				});
+				if (!params.get('days')) el.setAttribute('days', '5');
+				if (params.get('credit') === '0') el.setAttribute('no-attribution', '');
+
+				var colours = { bg: '--nws-bg', fg: '--nws-fg', accent: '--nws-accent' };
+				Object.keys(colours).forEach(function (name) {
+					var value = params.get(name);
+					if (value && /^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(value)) {
+						el.style.setProperty(colours[name], '#' + value);
+					}
+				});
+
+				if (window.parent !== window && 'ResizeObserver' in window) {
+					var last = 0;
+					new ResizeObserver(function () {
+						var height = Math.ceil(document.documentElement.getBoundingClientRect().height);
+						if (height === last) return;
+						last = height;
+						window.parent.postMessage({ type: 'nws-forecast-height', height: height }, '*');
+					}).observe(document.documentElement);
+				}
+			})();
+		</script>
+	</body>
+</html>

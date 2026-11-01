@@ -1,0 +1,15 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/?pagename=nws-forecast-demo",
+	"login": true,
+	"steps": [
+		{
+			"step": "activatePlugin",
+			"pluginPath": "nws-forecast-widget/nws-forecast-widget.php"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_name' => 'nws-forecast-demo', 'post_title' => 'NWS Forecast demo', 'post_content' => \"<!-- wp:paragraph --><p>The block:</p><!-- /wp:paragraph -->\\n\\n<!-- wp:nws-forecast-widget/forecast {\\\"lat\\\":\\\"46.8523\\\",\\\"lng\\\":\\\"-121.7603\\\",\\\"heading\\\":\\\"Mount Rainier\\\"} /-->\\n\\n<!-- wp:paragraph --><p>The shortcode:</p><!-- /wp:paragraph -->\\n\\n<!-- wp:shortcode -->[nws_forecast lat=\\\"47.6062\\\" lng=\\\"-122.3321\\\" days=\\\"3\\\" units=\\\"si\\\"]<!-- /wp:shortcode -->\" ) );"
+		}
+	]
+}

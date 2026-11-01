@@ -32,6 +32,27 @@ npm install nws-forecast-widget
 import 'nws-forecast-widget'; // registers <nws-forecast>
 ```
 
+### WordPress
+
+The [WordPress plugin](wordpress/nws-forecast-widget/) adds an "NWS Forecast" block, an
+`[nws_forecast lat="47.6062" lng="-122.3321"]` shortcode and a settings page for default units.
+Download the zip from [Releases](https://github.com/bolton/nws-forecast-widget/releases) and upload
+it under Plugins → Add New → Upload Plugin.
+
+### Squarespace, Wix, Webflow, Shopify, Google Sites, Notion…
+
+See [installing on your platform](docs/platforms.md). Site builders that strip script tags can use
+the hosted iframe instead:
+
+```html
+<iframe
+	src="https://bolton.github.io/nws-forecast-widget/embed/?lat=47.6062&lng=-122.3321&days=5"
+	title="Weather forecast"
+	loading="lazy"
+	style="width:100%;height:280px;border:0"
+></iframe>
+```
+
 ## Attributes
 
 | Attribute        | Default           | Description                                              |
@@ -123,6 +144,23 @@ responses are retried with backoff, and a stale grid is looked up again automati
   Outside the browser, pass `contact`.
 - **US only.** A point outside NWS coverage shows a clear message rather than an empty card.
 - **Icons** are the NWS icon images referenced by the forecast response.
+
+## Development
+
+```bash
+npm test          # client, day pairing and rendering tests
+npm run demo      # serves the repo; open /demo/ and /embed/?lat=47.6&lng=-122.3
+npm run build:wp  # bundles src/ into the plugin and writes dist/nws-forecast-widget-<version>.zip
+```
+
+The plugin's JavaScript is generated from `src/` by `build:wp` and is not committed. To try the
+plugin in a real WordPress without installing PHP:
+
+```bash
+npm run build:wp && npx @wp-playground/cli@3.1.58 server --mount=wordpress/nws-forecast-widget:/wordpress/wp-content/plugins/nws-forecast-widget --blueprint=wordpress/blueprint.json
+```
+
+Open the site at `http://127.0.0.1:9400`, not `localhost`, or WordPress's own scripts are blocked.
 
 ## About
 
