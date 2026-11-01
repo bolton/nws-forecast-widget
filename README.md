@@ -3,6 +3,11 @@
 A National Weather Service forecast for any US latitude and longitude, as a dependency-free web
 component. No API key, no build step, no framework.
 
+[![npm](https://img.shields.io/npm/v/nws-forecast-widget)](https://www.npmjs.com/package/nws-forecast-widget)
+[![license](https://img.shields.io/npm/l/nws-forecast-widget)](LICENSE)
+
+**[Live demo](https://bolton.github.io/nws-forecast-widget/demo/)**
+
 ```html
 <script
 	type="module"
