@@ -1,6 +1,6 @@
 {
 	"name": "nws-forecast-widget",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A dependency-free web component that shows the National Weather Service forecast for any US latitude and longitude. No API key required.",
 	"type": "module",
 	"main": "./src/index.js",
