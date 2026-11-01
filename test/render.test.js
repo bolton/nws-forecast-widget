@@ -89,7 +89,7 @@ test('renderForecast shows the place, temperatures and both credits', () => {
 	assert.match(html, /41°/);
 	assert.match(html, /forecast\.weather\.gov\/MapClick\.php\?lat=47\.6062&amp;lon=-122\.3321/);
 	assert.match(html, /Widget by beexploring\.com/);
-	assert.match(html, /href="https:\/\/beexploring\.com\/"/);
+	assert.match(html, /href="https:\/\/www\.beexploring\.com\/"/);
 });
 
 test('precipitation chances under 10% are hidden', () => {

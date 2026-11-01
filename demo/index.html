@@ -131,7 +131,7 @@
 				for (const name of ['lat', 'lng', 'days', 'units']) live.setAttribute(name, data.get(name));
 				const units = data.get('units') === 'si' ? ' units="si"' : '';
 				snippet.textContent =
-					`<script type="module" src="https://cdn.jsdelivr.net/npm/nws-forecast-widget@0.1.0/src/index.js"><\/script>\n` +
+					`<script type="module" src="https://cdn.jsdelivr.net/npm/nws-forecast-widget@0.1.1/src/index.js"><\/script>\n` +
 					`<nws-forecast lat="${data.get('lat')}" lng="${data.get('lng')}" days="${data.get('days')}"${units}></nws-forecast>`;
 			}
 

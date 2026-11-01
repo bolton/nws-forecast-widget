@@ -6,12 +6,13 @@ component. No API key, no build step, no framework.
 [![npm](https://img.shields.io/npm/v/nws-forecast-widget)](https://www.npmjs.com/package/nws-forecast-widget)
 [![license](https://img.shields.io/npm/l/nws-forecast-widget)](LICENSE)
 
-**[Live demo](https://bolton.github.io/nws-forecast-widget/demo/)**
+**[Live demo](https://bolton.github.io/nws-forecast-widget/demo/)** · Built by
+[beexploring.com](https://www.beexploring.com/)
 
 ```html
 <script
 	type="module"
-	src="https://cdn.jsdelivr.net/npm/nws-forecast-widget@0.1.0/src/index.js"
+	src="https://cdn.jsdelivr.net/npm/nws-forecast-widget@0.1.1/src/index.js"
 ></script>
 
 <nws-forecast lat="47.6062" lng="-122.3321" days="5"></nws-forecast>
@@ -122,6 +123,12 @@ responses are retried with backoff, and a stale grid is looked up again automati
   Outside the browser, pass `contact`.
 - **US only.** A point outside NWS coverage shows a clear message rather than an empty card.
 - **Icons** are the NWS icon images referenced by the forecast response.
+
+## About
+
+Made by [beexploring.com](https://www.beexploring.com/), a guide to hiking, camping, skiing and road
+trips in the Pacific Northwest, where this widget started life on the trail and pass conditions
+pages.
 
 ## License
 

@@ -1,6 +1,6 @@
 import { summarizeDays } from './summarize.js';
 
-const ATTRIBUTION_URL = 'https://beexploring.com/';
+const ATTRIBUTION_URL = 'https://www.beexploring.com/';
 // Single-digit chances are noise next to the summary text.
 const MIN_PRECIP_SHOWN = 10;
 
