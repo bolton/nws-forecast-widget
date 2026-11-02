@@ -1,5 +1,5 @@
 === NWS Forecast Widget ===
-Contributors: robertlbolton
+Contributors: beexploring
 Tags: weather, forecast, weather widget, nws, noaa
 Requires at least: 6.5
 Tested up to: 7.1
