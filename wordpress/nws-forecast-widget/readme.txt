@@ -24,6 +24,8 @@ Good for trailheads, campgrounds, ski areas, event venues, farms, marinas and an
 
 The widget is open source and also available for any website as the [nws-forecast-widget npm package](https://www.npmjs.com/package/nws-forecast-widget). It was built for [beexploring.com](https://www.beexploring.com/), a guide to the outdoors in the Pacific Northwest.
 
+This plugin is not affiliated with or endorsed by the National Weather Service or NOAA. It displays their public forecast data.
+
 = Shortcode =
 
 `[nws_forecast lat="47.6062" lng="-122.3321" days="5" units="us" heading="Seattle"]`
