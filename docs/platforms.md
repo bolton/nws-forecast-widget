@@ -33,7 +33,7 @@ is `lng`. Forecasts cover the United States and its territories.
 ></iframe>
 ```
 
-The [demo page](https://bolton.github.io/nws-forecast-widget/demo/) writes both snippets for
+The [demo page](https://bolton.github.io/nws-forecast/) writes both snippets for
 whatever location you enter.
 
 ## Platform by platform

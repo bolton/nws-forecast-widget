@@ -24,7 +24,7 @@
 	],
 	"scripts": {
 		"test": "node --test",
-		"demo": "npx --yes http-server@14.1.1 -c-1 -p 8411 .",
+		"serve": "npx --yes http-server@14.1.1 -c-1 -p 8411 .",
 		"build:wp": "node scripts/build-wp.js"
 	},
 	"keywords": [

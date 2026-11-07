@@ -6,7 +6,7 @@ component. No API key, no build step, no framework.
 [![npm](https://img.shields.io/npm/v/nws-forecast-widget)](https://www.npmjs.com/package/nws-forecast-widget)
 [![license](https://img.shields.io/npm/l/nws-forecast-widget)](LICENSE)
 
-**[Live demo](https://bolton.github.io/nws-forecast-widget/demo/)** · Built by
+**[Live demo](https://bolton.github.io/nws-forecast/)** · Built by
 [beexploring.com](https://www.beexploring.com/)
 
 ```html
@@ -149,7 +149,7 @@ responses are retried with backoff, and a stale grid is looked up again automati
 
 ```bash
 npm test          # client, day pairing and rendering tests
-npm run demo      # serves the repo; open /demo/ and /embed/?lat=47.6&lng=-122.3
+npm run serve     # serves the repo; open /embed/?lat=47.6&lng=-122.3
 npm run build:wp  # bundles src/ into the plugin and writes dist/nws-forecast-widget-<version>.zip
 ```
 
